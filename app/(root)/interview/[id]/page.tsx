@@ -1,4 +1,3 @@
-import React from 'react'
 import {redirect} from "next/navigation";
 import {getInterviewById} from "@/lib/actions/general.action";
 import {getRandomInterviewCover} from "@/lib/utils";
@@ -29,8 +28,8 @@ const Page = async ( { params }: RouteParams) => {
             </div>
 
             <Agent
-                userName={user?.name}
-                type={user?.id}
+                userName={user?.name || ''}
+                userId={user?.id}
                 interviewId={id}
                 type="interview"
                 questions={interview.questions}
